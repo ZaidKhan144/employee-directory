@@ -5,8 +5,7 @@
 body{
     margin: 0 auto;
     width: 70%;
-    background-color: rgb(200, 196, 204);
-    position: relative;
+    background-color: rgb(200, 196, 204);  
 }
 .main-header{
     display: flex;
@@ -47,14 +46,14 @@ img{
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    /* background : rgba(100, 100, 100, 0.4); */
+    bottom: 0px;
+    background : rgba(100, 100, 100, 0.4);
 }
 .overlay-card{
     background-color: rgb(173, 126, 126);
-    width: 30%;
+    width: 20%;
     border-radius: 5px;
-    margin : 15% auto auto;
+    margin : 11% auto auto;
 }
 .overlay-img{
     width: 30%;
