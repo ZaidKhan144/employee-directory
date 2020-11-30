@@ -3,7 +3,8 @@ let employees = [];
 const mainContainer = document.querySelector('.main-container');
 const replaceOverlay = document.querySelector('.overlay-inside');
 const overlay = document.querySelector('.overlay');
-const oclose = document.getElementsByClassName('.close');
+const overlayCard = document.querySelector('.overlay-card');
+
 
 fetch(urlAPI)
 .then(res => res.json())
@@ -29,7 +30,9 @@ function displayEmployees(employeeData){
     </div>
         `
     });
+
     mainContainer.innerHTML = employeeHTML;
+
 }
 
 function displayOverlay(index){
@@ -39,7 +42,7 @@ function displayOverlay(index){
         let streetNum = overlayStuff.location.street.number;
         let streetName = overlayStuff.location.street.name;
         let streetState = overlayStuff.location.state;
-        let streetPostCode = overlayStuff.location.streetPostCode;
+        let streetPostCode = overlayStuff.location.postcode;
         let city = overlayStuff.location.city;
         let email = overlayStuff.email;
         let name = `${overlayStuff.name.first} ${overlayStuff.name.last}`;
@@ -54,6 +57,10 @@ function displayOverlay(index){
     <p>${email}</p>
     <p>${city}</p>
     <div class="line"></div>
+    <div class="arrows">
+    <p class="left-arrow">&lt;</p>
+    <p class="right-arrow">&gt;</p>
+    </div>
     <p>${phone}</p>
     <p>${streetNum} ${streetName}, ${streetState} ${streetPostCode}</p>
     <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
@@ -72,9 +79,13 @@ mainContainer.addEventListener('click', (e) =>{
     }
 });
 
-overlay.addEventListener('click', ()=>{
-    overlay.classList.add('hidden');
+overlay.addEventListener('click', (e)=>{
+    const oclose = document.querySelector('button');
+     if(e.target === oclose){
+        overlay.classList.add('hidden');
+    }
 });
+
 let input = document.querySelector('input');
 input.addEventListener('keyup', searchEmp);
 
@@ -88,7 +99,7 @@ function searchEmp(txt){
         let name = names[i].textContent;
         nameCap = name.toUpperCase();
         if(nameCap.includes(text)){
-            names[i].parentNode.parentNode.parentNode.style.display = 'block';
+            names[i].parentNode.parentNode.parentNode.style.display = '';
         }else{
             names[i].parentNode.parentNode.parentNode.style.display = 'none';
         }

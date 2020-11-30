@@ -23,6 +23,11 @@ body{
 .card{
     background-color: #fff;
     border-radius: 5px;
+    transition: transform .3s;
+}
+.card:hover{
+    transform: translateY(5px);
+    cursor: pointer;
 }
 img{
     width: 30%;
@@ -83,4 +88,19 @@ button{
 }
 .hidden{
     display: none;
+}
+.left-arrow, .right-arrow{
+    position: absolute;
+    width: 10%;
+    font-size: 20px;
+}
+.right-arrow{
+    right: 0;
+    top: 50%;
+}
+.left-arrow{
+    top: 50%;
+}
+.right-arrow:hover, .left-arrow:hover{
+    cursor: pointer;
 }
