@@ -32,7 +32,6 @@ function displayEmployees(employeeData){
     });
 
     mainContainer.innerHTML = employeeHTML;
-
 }
 
 function displayOverlay(index){
@@ -57,10 +56,10 @@ function displayOverlay(index){
     <p>${email}</p>
     <p>${city}</p>
     <div class="line"></div>
-    <div class="arrows">
+    
     <p class="left-arrow">&lt;</p>
     <p class="right-arrow">&gt;</p>
-    </div>
+    
     <p>${phone}</p>
     <p>${streetNum} ${streetName}, ${streetState} ${streetPostCode}</p>
     <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
@@ -69,13 +68,37 @@ function displayOverlay(index){
     overlay.classList.remove('hidden');
     replaceOverlay.innerHTML = overlayHTML;
 }
+    
 
 mainContainer.addEventListener('click', (e) =>{
+    
     if(e.target !== mainContainer){
         const card = e.target.closest('.card');
-        const index = card.getAttribute('data-index');
+        let index = card.getAttribute('data-index');
 
         displayOverlay(index);
+
+        overlay.addEventListener('click', (e) => {
+            
+            const rightarrow = document.querySelector('.right-arrow');
+            if(e.target === rightarrow){
+                console.log('working');
+                if(index < employees.length - 1){
+                    index++;
+                    displayOverlay(index);
+                }
+            }
+            
+        });
+        overlay.addEventListener('click', (e)=>{
+            const leftarrow = document.querySelector('.left-arrow');
+            if(e.target === leftarrow){
+                if(index > 0){
+                    index--;
+                    displayOverlay(index);
+                }
+            }
+        });
     }
 });
 
@@ -85,6 +108,7 @@ overlay.addEventListener('click', (e)=>{
         overlay.classList.add('hidden');
     }
 });
+
 
 let input = document.querySelector('input');
 input.addEventListener('keyup', searchEmp);
