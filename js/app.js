@@ -47,8 +47,6 @@ function displayOverlay(index){
         let date = new Date(overlayStuff.dob.date);
 
     const overlayHTML = `
-    <div class="overlay-card" data-index="${index}">
-    <div class="overlay-inside">
     <button>X</button>
     <img class="overlay-img" src="${img}" alt="">
     <div class="overlay-content">
@@ -59,8 +57,6 @@ function displayOverlay(index){
     <p>${phone}</p>
     <p>${streetNum} ${streetName}, ${streetState} ${streetPostCode}</p>
     <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-</div>
-</div>
     </div>
     `;
     overlay.classList.remove('hidden');
@@ -79,3 +75,4 @@ mainContainer.addEventListener('click', (e) =>{
 overlay.addEventListener('click', ()=>{
     overlay.classList.add('hidden');
 });
+
