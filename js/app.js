@@ -75,4 +75,24 @@ mainContainer.addEventListener('click', (e) =>{
 overlay.addEventListener('click', ()=>{
     overlay.classList.add('hidden');
 });
+let input = document.querySelector('input');
+input.addEventListener('keyup', searchEmp);
+
+function searchEmp(txt){
+    
+    const names = document.getElementsByTagName('h2');
+    text = txt.target.value.toUpperCase();
+    console.log(`text = ${text}`); 
+
+    for(let i=0; i<names.length; i++){
+        let name = names[i].textContent;
+        nameCap = name.toUpperCase();
+        if(nameCap.includes(text)){
+            names[i].parentNode.parentNode.parentNode.style.display = 'block';
+        }else{
+            names[i].parentNode.parentNode.parentNode.style.display = 'none';
+        }
+    }
+}
+
 
