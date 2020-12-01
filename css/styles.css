@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 *{
     margin: 0;
     box-sizing: border-box;
@@ -5,7 +6,17 @@
 body{
     margin: 0 auto;
     width: 70%;
-    background-color: rgb(200, 196, 204);  
+    background: rgb(214,109,117);
+    background: linear-gradient(87deg, rgba(214,109,117,1) 0%, rgba(226,149,135,1) 100%);; 
+}
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+input[type="text"]{
+    width: 25%;
+    padding: 10px 0 10px 15px;
+    border: none;
+    
 }
 .main-header{
     display: flex;
@@ -55,7 +66,8 @@ img{
     background : rgba(100, 100, 100, 0.4);
 }
 .overlay-card{
-    background-color: rgb(173, 126, 126);
+    background: rgb(255,216,155);
+    background: linear-gradient(87deg, rgba(255,216,155,1) 0%, rgba(25,84,123,1) 100%);
     width: 20%;
     border-radius: 5px;
     margin : 11% auto auto;
@@ -93,6 +105,7 @@ button{
     position: absolute;
     width: 10%;
     font-size: 20px;
+    font-weight: 500;
 }
 .right-arrow{
     right: 0;

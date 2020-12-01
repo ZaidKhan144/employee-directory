@@ -57,8 +57,8 @@ function displayOverlay(index){
     <p>${city}</p>
     <div class="line"></div>
     
-    <p class="left-arrow">&lt;</p>
-    <p class="right-arrow">&gt;</p>
+    <p class="left-arrow"><i class="fas fa-arrow-left"></i></p>
+    <p class="right-arrow"><i class="fas fa-arrow-right"></i></p>
     
     <p>${phone}</p>
     <p>${streetNum} ${streetName}, ${streetState} ${streetPostCode}</p>
@@ -80,7 +80,7 @@ mainContainer.addEventListener('click', (e) =>{
 
         overlay.addEventListener('click', (e) => {
             
-            const rightarrow = document.querySelector('.right-arrow');
+            const rightarrow = document.querySelector('.fa-arrow-right');
             if(e.target === rightarrow){
                 console.log('working');
                 if(index < employees.length - 1){
@@ -91,7 +91,7 @@ mainContainer.addEventListener('click', (e) =>{
             
         });
         overlay.addEventListener('click', (e)=>{
-            const leftarrow = document.querySelector('.left-arrow');
+            const leftarrow = document.querySelector('.fa-arrow-left');
             if(e.target === leftarrow){
                 if(index > 0){
                     index--;
@@ -117,7 +117,7 @@ function searchEmp(txt){
     
     const names = document.getElementsByTagName('h2');
     text = txt.target.value.toUpperCase();
-    console.log(`text = ${text}`); 
+    //console.log(`text = ${text}`); 
 
     for(let i=0; i<names.length; i++){
         let name = names[i].textContent;
