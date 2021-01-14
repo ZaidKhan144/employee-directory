@@ -46,9 +46,6 @@ img{
     margin-left: 25px;
     margin: 15px 0 15px 0px;
 }
-.content{
-    margin-right: 25px;    
-}
 .inside{
     display: flex;
     flex-direction: row;

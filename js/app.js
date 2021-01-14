@@ -102,6 +102,9 @@ mainContainer.addEventListener('click', (e) =>{
     }
 });
 
+
+
+//Close btn
 overlay.addEventListener('click', (e)=>{
     const oclose = document.querySelector('button');
      if(e.target === oclose){
@@ -110,6 +113,8 @@ overlay.addEventListener('click', (e)=>{
 });
 
 
+
+//Search Function
 let input = document.querySelector('input');
 input.addEventListener('keyup', searchEmp);
 
