@@ -48,7 +48,7 @@ Following the mockup, I started this project by first creating HTML and CSS to s
 
 To build this project, I have used `HTML`, `CSS`, `JavaScript`, `Random User Generator API`, and `fetch.` 
 
-You can view the live version here: https://zaidkhan144.github.io/employee-directory/
+You can view the live version of the app here: https://zaidkhan144.github.io/employee-directory/
 
 
 
