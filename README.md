@@ -16,7 +16,7 @@ To make below steps work, You will need node and npm installed globally on your 
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ZaidKhan144/shopping-cart.git
+$ git clone https://github.com/ZaidKhan144/employee-directory.git
 
 # Enter the Git folder
 $ cd employee-directory
