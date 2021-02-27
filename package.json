@@ -4,6 +4,7 @@
   "description": "Rendering employees contact information using Random User Generator API",
   "main": "index.js",
   "scripts": {
+    "start": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
